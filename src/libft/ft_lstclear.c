@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hurabe <hurabe@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 16:06:21 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/11 20:44:51 by hurabe           ###   ########.fr       */
+/*   Created: 2024/05/19 15:32:29 by hurabe            #+#    #+#             */
+/*   Updated: 2024/05/21 15:18:54 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "libft.h"
 
+void	ft_lstclear(t_list **lst, void (*del)(void *))
+{
+	t_list	*node;
 
-
-#endif
+	if (!lst || !del)
+		return ;
+	while (*lst)
+	{
+		node = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = node;
+	}
+}
