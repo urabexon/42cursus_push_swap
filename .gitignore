@@ -54,9 +54,5 @@ dkms.conf
 .vscode/launch.json
 .vscode/settings.json
 .DS_Store
-client
-server
 .github/
-g-client
-g-server
 .vscode/tasks.json
