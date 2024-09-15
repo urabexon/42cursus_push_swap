@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   coordinate_press.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 20:41:37 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 22:19:46 by hurabe           ###   ########.fr       */
+/*   Created: 2024/09/15 19:36:08 by hurabe            #+#    #+#             */
+/*   Updated: 2024/09/15 21:38:53 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static long	get_top(t_dst *dst)
+long	*coordinate_press(char **argv, int len)
 {
-	return (dst->value);
-}
-
-void	radix_sort(t_dst **a, t_dst **b, t_config *conf)
-{
+	long	*ret;
+	long	*arr;
+	int		i;
+	int		j;
+	
+	argv++;
 	
 }

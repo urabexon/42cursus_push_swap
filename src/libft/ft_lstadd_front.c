@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hurabe <hurabe@student.42tokyo.jp>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 20:41:37 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 22:19:46 by hurabe           ###   ########.fr       */
+/*   Created: 2024/05/19 15:31:03 by hurabe            #+#    #+#             */
+/*   Updated: 2024/05/19 19:48:35 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-static long	get_top(t_dst *dst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	return (dst->value);
-}
-
-void	radix_sort(t_dst **a, t_dst **b, t_config *conf)
-{
-	
+	if (!lst || !new)
+		return ;
+	new->next = *lst;
+	*lst = new;
 }

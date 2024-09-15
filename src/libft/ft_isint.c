@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   ft_isint.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 20:41:37 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 22:19:46 by hurabe           ###   ########.fr       */
+/*   Created: 2024/09/15 17:53:32 by hurabe            #+#    #+#             */
+/*   Updated: 2024/09/15 18:18:05 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-static long	get_top(t_dst *dst)
+int	ft_isint(long n)
 {
-	return (dst->value);
-}
-
-void	radix_sort(t_dst **a, t_dst **b, t_config *conf)
-{
-	
+	return (n >= -2147483648 && n <= 2147483647);
 }

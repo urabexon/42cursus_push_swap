@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*   ft_issign.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/11 20:41:37 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 22:19:46 by hurabe           ###   ########.fr       */
+/*   Created: 2024/09/15 17:57:09 by hurabe            #+#    #+#             */
+/*   Updated: 2024/09/15 18:19:19 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-static long	get_top(t_dst *dst)
+int	ft_issign(char c)
 {
-	return (dst->value);
-}
-
-void	radix_sort(t_dst **a, t_dst **b, t_config *conf)
-{
-	
+	return (c == '-' || c == '+');
 }
