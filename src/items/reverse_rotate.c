@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:21:15 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/17 18:42:33 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:46:17 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 static void	reverse_rotate(t_dst **dst)
 {
-	
+	t_dst	*front;
+	t_dst	*bottom_most;
+
+	front = *dst;
+	bottom_most = ft_lstlast(*dst);
+	front->prev = bottom_most;
+	bottom_most->next = front;
+	bottom_most->prev->next = NULL;
+	bottom_most->prev = NULL;
+	*dst = bottom_most;
 }
 
 // スタック a のすべての要素を 1 だけシフトダウンする。

@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:21:09 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/17 18:45:42 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:49:25 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ static void	push(t_dst **send, t_dst **recieve)
 
 	send_to_recieve = *send;
 	next_send_top = send_to_recieve->next;
-	
+	recieve_ptr = *recieve;
+	send_to_recieve->next = recieve_ptr;
+	if (next_send_top)
+		next_send_top->prev = NULL;
+	if (!(!recieve || !(*recieve)))
+		recieve_ptr->press_val = send_to_recieve;
+	*send = next_send_top;
+	*recieve = send_to_recieve;
 }
 
 // bの先頭の要素を取ってaの先頭に置く。
