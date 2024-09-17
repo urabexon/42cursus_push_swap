@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:21 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 22:51:47 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:09:56 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,20 @@
 # define PUSH_SWAP_H
 
 //include
-# include "src/libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
+# include <stdbool.h>
+# include <stdio.h>
 
 //struct Doubly Linked List
 //値を保持する双方向リストの構造体,valueはリストの要素、press_valは座標圧縮で使用。
 typedef struct s_dst
 {
-	long			value;
-	long			press_val;
-	struct s_dst	*next;
-	struct s_dst	*prev;
+	long			value; // このノードが保持する主なデータ。この値がソートの対象となる。
+	long			press_val; // 追加のデータ。座標圧縮など、ソートに関連する追加の情報を保持するために使われる値。
+	struct s_dst	*next; // 次のノードへのポインタ。これにより、双方向リストの次のノードにアクセスできる。
+	struct s_dst	*prev; // 前のノードへのポインタ。これにより、双方向リストの前のノードにアクセスできる。
 }					t_dst;
 
 //基数ソートの設定を保持するための構造体。lenはスタックの長さ、mux_numはスタック内の最大値を表す。
@@ -32,6 +36,22 @@ typedef struct s_config
 	int		len;
 	int		max_num;
 }			t_config;
+
+//libft
+int		ft_atoi(const char *str);
+long	ft_atol(char *str);
+int		ft_isdigit(int c);
+int		ft_isint(long n);
+int		ft_issign(char c);
+int		ft_isspace(char c);
+size_t	ft_strlen(const char *s);
+int		ft_strcmp(char *s1, char *s2);
+t_dst	*ft_lstnew(long value);
+int		ft_lstsize(t_dst *dst);
+t_dst	*ft_lstlast(t_dst *dst);
+void	ft_lstadd_back(t_dst **dst, t_dst *new);
+void	ft_lstclear(t_dst **lst);
+
 
 //command process function
 //スタックを操作するコマンド関数

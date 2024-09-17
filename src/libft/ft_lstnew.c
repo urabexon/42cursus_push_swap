@@ -3,23 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hurabe <hurabe@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:31:11 by hurabe            #+#    #+#             */
-/*   Updated: 2024/05/19 18:43:18 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:06:20 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstnew(void *content)
+t_dst	*ft_lstnew(long value)
 {
-	t_list	*new_node;
+	t_dst	*new;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
+	new = (t_dst *)malloc(sizeof(t_dst));
+	if (!new)
 		return (NULL);
-	new_node->content = content;
-	new_node->next = NULL;
-	return (new_node);
+	new->value = value;
+	new->press_val = 0;
+	new->next = NULL;
+	new->prev = NULL;
+	return (new);
 }

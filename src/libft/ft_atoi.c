@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hurabe <hurabe@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:06:22 by hurabe            #+#    #+#             */
-/*   Updated: 2024/05/21 22:01:37 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:07:14 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-static bool	ft_isspace(int c)
+static bool	ft_atoi_space(int c)
 {
 	return (c == ' ' || c == '\t' || \
 	c == '\n' || c == '\r' || c == '\f' || c == '\v');
@@ -46,7 +46,7 @@ int	ft_atoi(const char *str)
 
 	sign = 1;
 	result = 0;
-	while (ft_isspace(*str))
+	while (ft_atoi_space(*str))
 		str++;
 	if (*str == '+')
 		str++;

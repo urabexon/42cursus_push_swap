@@ -6,32 +6,67 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:21:17 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 19:07:38 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:32:17 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+// rotate.cでは、リストの要素を1つずつ回転（シフト）させる操作を実装しています。
+// 具体的には、リストの先頭の要素を最後に移動させ、リスト全体を1つずつ前に詰める操作を行います。
+
 static void	rotate(t_dst **dst)
 {
-	
+	t_dst	*front;
+	t_dst	*back;
+
+	// リストが空か、または1つしかない場合は何もせずreturn
+	if (!dst || !*dst || !(*dst)->next)
+		return ;
+	front = *dst; // リストの先頭を指す
+	back = front->next; // リストの2番目のノードを指す
+
+	// 先頭ノードをリストから取り外し、2番目のノードを新しい先頭にする
+	*dst = back; // 新しい先頭
+	back->prev = NULL; // 新しい先頭の前のノードをNULLにする
+	front->next = NULL; // 元の先頭ノードの次のノードをNULLにする
+	front->prev = NULL; // 元の先頭ノードの前のノードをNULLにする（新しい最後のノードとしてクリア）
+
+	// 先頭の要素をリストの最後に追加
+	ft_lstadd_back(dst, front);
 }
 
+// スタックaのすべての要素を 1 ずらす。
+// 最初の要素が最後の要素になる。
 void	ra(t_dst **a)
 {
 	rotate(a);
 	write(1, "ra\n", 3);
 }
 
+// スタック b のすべての要素を 1 ずらす。
+// 最初の要素が最後の要素になる。
 void	rb(t_dst **b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
 }
 
+// ra と rb を同時に行う。
 void	rr(t_dst **a, t_dst **b)
 {
 	rotate(a);
 	rotate(b);
 	write(1, "rr\n", 3);
 }
+
+//動作の流れ
+//1. 先頭ノードの取り外し:
+//リストの先頭ノードを指すfrontを取り出し、その次のノードbackを新しい先頭として設定します。
+//frontのnextとprevをNULLにして、リストの最後に追加されるための準備をします。
+
+//2. 新しい先頭の設定:
+//back->prev = NULL; で、新しい先頭ノードの前のポインタをNULLにします。
+
+//3. リストの最後に追加:
+//ft_lstadd_backを使用して、元の先頭ノードをリストの最後に追加します。

@@ -6,11 +6,11 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 23:17:29 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 23:33:44 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:07:28 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 static int	ft_handle_overflow(long long now, long long past)
 {

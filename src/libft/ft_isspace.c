@@ -6,11 +6,11 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 17:57:46 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/15 18:05:28 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:07:36 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 int	ft_isspace(char c)
 {

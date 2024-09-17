@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hurabe <hurabe@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:32:40 by hurabe            #+#    #+#             */
-/*   Updated: 2024/05/20 21:04:59 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:07:44 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-t_list	*ft_lstlast(t_list *lst)
+// この関数は、リストの最後のノードを返す。
+// リストの最後までポインタを進めて、最後のノードを見つけて返す。
+
+t_dst	*ft_lstlast(t_dst *dst)
 {
-	if (!lst)
+	if (!dst)
 		return (NULL);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	while (dst->next)
+		dst = dst->next;
+	return (dst);
 }

@@ -3,21 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hurabe <hurabe@student.42tokyo.jp>         +#+  +:+       +#+        */
+/*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:30:55 by hurabe            #+#    #+#             */
-/*   Updated: 2024/05/20 22:05:57 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:07:16 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+// リストの最後に新しいノードを追加する関数
+// ft_lstlast関数を使ってリストの最後のノードを見つけ、その次に新しいノードを追加する。
+
+void	ft_lstadd_back(t_dst **dst, t_dst *new)
 {
-	if (!lst || !new)
+	t_dst	*stock;
+
+	if (!(*dst) || !dst)
+	{
+		*dst = new;
 		return ;
-	if (*lst)
-		ft_lstlast(*lst)->next = new;
-	else
-		*lst = new;
+	}
+	stock = *dst;
+	while (stock->next)
+		stock = stock->next;
+	new->prev = stock;
+	stock->next = new;
 }

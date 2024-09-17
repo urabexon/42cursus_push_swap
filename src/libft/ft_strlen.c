@@ -6,11 +6,11 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:08:07 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/11 21:06:10 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/17 21:08:00 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../push_swap.h"
 
 size_t	ft_strlen(const char *s)
 {
