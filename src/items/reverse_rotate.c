@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:21:15 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/18 19:01:14 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/18 21:30:05 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	reverse_rotate(t_dst **dst)
 {
 	t_dst	*front; // frontはリストの現在の先頭ノードを操作するための変数
-	t_dst	*bottom_most; // frontはリストの最後のノードを操作するための変数
+	t_dst	*bottom_most; // bottom_mostはリストの最後のノードを操作するための変数
 
 	// リストが空か、または一つしかない場合は何もしない
 	if (!dst || ! *dst || !(*dst)->next)

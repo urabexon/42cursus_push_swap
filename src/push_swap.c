@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:14 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/17 21:08:12 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/18 21:00:26 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,15 +74,15 @@ int	main(int argc, char **argv)
 	b = (t_dst **)malloc(sizeof(t_dst *));
 	conf = (t_config *)malloc(sizeof(t_config));
 	if (!a || !b || !conf)
-		exit(0);
+		return (free(a), free(b), free(conf), 0);
 	init_dst(a, b, argv, conf);
-	if (is_sorted_ascending(a))
+	if (is_ascending(a) || under_5_argv(a, b, argv, conf))
+	//if (is_sorted_ascending(a) || under_five_argv_checker(a, b, argv, conf))
 		exit(0);
-	if (under_five_argv_checker(a, b, argv, conf))
-		exit(0);
-	separated_by_pivot(argv, a, b, get_pivot_num(argv));
-	alg_1(a, b);
-	many_pb(a, b);
-	exit(0);
-	return (0);
+	sep_pivot(argv, a, b, get_pivot_n(argv));
+	//separated_by_pivot(argv, a, b, get_pivot_num(argv));
+	//alg_1(a, b);
+	//many_pb(a, b);
+	//exit(0);
+	return (alg_1(a, b), many_pb(a, b), exit(0), 0);
 }
