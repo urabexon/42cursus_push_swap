@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:21 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/17 21:09:56 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/20 17:29:43 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,6 @@ typedef struct s_config
 int		ft_atoi(const char *str);
 long	ft_atol(char *str);
 int		ft_isdigit(int c);
-int		ft_isint(long n);
-int		ft_issign(char c);
-int		ft_isspace(char c);
 size_t	ft_strlen(const char *s);
 int		ft_strcmp(char *s1, char *s2);
 t_dst	*ft_lstnew(long value);
@@ -82,6 +79,9 @@ int		is_argv_error(char **argv);
 
 //coordinate press
 //座標圧縮、値の範囲を縮めて基数ソートの効率を図る
+int		partition(long *arr, int low, int high);
+void	quicksort(long *arr, int low, int high);
+long	*sort(char **argv, int len);
 long	*coordinate_press(char **argv, int len);
 
 //radix sort

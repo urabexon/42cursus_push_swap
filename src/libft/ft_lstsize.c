@@ -6,11 +6,11 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/19 15:32:49 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/17 21:07:49 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/20 17:05:20 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 int	ft_lstsize(t_dst *dst)
 {

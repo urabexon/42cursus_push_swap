@@ -6,11 +6,11 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:21:09 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/18 21:31:22 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/20 17:05:43 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../push_swap.h"
 
 static void	push(t_dst **send, t_dst **recieve)
 {
