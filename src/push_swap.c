@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:14 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/18 21:00:26 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/21 20:24:18 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	many_pb(t_dst **a, t_dst **b)
 }
 
 //under five argv check
-int	argv_checker(t_dst **a, t_dst **b, char **argv, t_config *conf)
+int	under_5_argv(t_dst **a, t_dst **b, char **argv, t_config *conf)
 {
 	if (conf->len == 2)
 	{
