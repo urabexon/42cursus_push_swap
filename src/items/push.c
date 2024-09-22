@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:21:09 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/20 17:05:43 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/22 21:38:32 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	push(t_dst **send, t_dst **recieve)
 	t_dst	*send_to_recieve; // send_to_recieveはリストの現在の先頭ノードを操作するための変数
 	t_dst	*next_send_top; // next_send_topは、送信元リストの2番目のノードを操作するための変数
 
-	// 送信元我からの場合は何もしない
+	// 送信元からの場合は何もしない
 	if (!send || !*send)
 		return ;
 	send_to_recieve = *send; // 送信元の先頭要素

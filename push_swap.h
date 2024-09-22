@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:21 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/22 18:44:26 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/22 21:56:53 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,9 +106,8 @@ long	get_pivot_n(char **argv);
 void	sep_pivot(char **argv, t_dst **a, t_dst **b, long pivot_num);
 
 //main
-int			count_argv(char **argv);
-void		many_pb(t_dst **a, t_dst **b);
-int			under_5_argv(t_dst **a, t_dst **b, char **argv, t_config *conf);
-
+int		count_argv(char **argv);
+void	many_pb(t_dst **a, t_dst **b);
+int		under_5_argv(t_dst **a, t_dst **b, char **argv, t_config *conf);
 
 #endif
