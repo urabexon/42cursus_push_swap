@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:21 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/20 17:29:43 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/22 18:44:26 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,10 @@ void	ft_lstclear(t_dst **lst);
 
 //command process function
 //スタックを操作するコマンド関数
-void	push(t_dst **send, t_dst **recieve);
-void	reverse_rotate(t_dst **dst);
-void	rotate(t_dst **dst);
-void	swap(t_dst **dst);
+//void	push(t_dst **send, t_dst **recieve);
+//void	reverse_rotate(t_dst **dst);
+//void	rotate(t_dst **dst);
+//void	swap(t_dst **dst);
 
 //command process items
 //スタックを操作するコマンド関数
@@ -79,19 +79,36 @@ int		is_argv_error(char **argv);
 
 //coordinate press
 //座標圧縮、値の範囲を縮めて基数ソートの効率を図る
-int		partition(long *arr, int low, int high);
-void	quicksort(long *arr, int low, int high);
-long	*sort(char **argv, int len);
+//int		partition(long *arr, int low, int high);
+//void	quicksort(long *arr, int low, int high);
+//long	*sort(char **argv, int len);
 long	*coordinate_press(char **argv, int len);
+
+// init_dst
+void	init_dst(t_dst **a, t_dst **b, char **argv, t_config *conf);
+int		is_ascending(t_dst **a);
+int		is_descending(t_dst **b);
+
+// ps_isfunction
+void	three_arg(char **argv, t_dst **a, t_dst **b);
+int		is_swap(t_dst **a, t_dst **b);
+int		is_rotate(t_dst **a, t_dst **b);
+void	let_go(t_dst **a, t_dst **b, int is_swap, int is_rotate);
+int		alg_1(t_dst **a, t_dst **b);
 
 //radix sort
 //基数ソート本体、スタックA（t_dst **a）をソートし、必要に応じてスタックB（t_dst **b）を使用してデータの移動を行う
-long	get_top(t_dst *dst);
+//long	get_top(t_dst *dst);
 void	radix_sort(t_dst **a, t_dst **b, t_config *conf);
+
+// sep_pivot
+long	get_pivot_n(char **argv);
+void	sep_pivot(char **argv, t_dst **a, t_dst **b, long pivot_num);
 
 //main
 int			count_argv(char **argv);
 void		many_pb(t_dst **a, t_dst **b);
-int			argv_checker(t_dst **a, t_dst **b, char **argv, t_config *conf);
+int			under_5_argv(t_dst **a, t_dst **b, char **argv, t_config *conf);
+
 
 #endif

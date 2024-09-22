@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 20:41:37 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/21 20:17:53 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/22 18:38:20 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	radix_sort(t_dst **a, t_dst **b, t_config *conf)
 	i = 0;
 	// i < max_bitsで最大ビット数までソートを繰り返す
 	// is_sorted_ascending(a)はaリストがすでに昇順にソートされているかを確認する
-	while (i < max_bits && !is_sorted_ascending(a))
+	while (i < max_bits && !is_ascending(a))
 	{
 		// jはaリスト内の各要素を順番に処理するための変数
 		j = 0;

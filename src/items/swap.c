@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 16:21:19 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/20 17:05:54 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/22 18:45:58 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static void	swap(t_dst **dst)
 	t_dst	*third_num;
 
 	front_to_back = *dst;
+	back_to_front = NULL;
 	if (!front_to_back || !back_to_front)
 		return ;
 	back_to_front = front_to_back->next;

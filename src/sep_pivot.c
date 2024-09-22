@@ -6,13 +6,13 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 20:37:49 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/21 20:49:25 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/22 17:04:17 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-long	get_pivot_num(char	**argv)
+long	get_pivot_n(char **argv)
 {
 	int	argv_count;
 
@@ -21,7 +21,7 @@ long	get_pivot_num(char	**argv)
 	return (argv_count / 2);
 }
 
-void	separated_by_pivot(char	**argv, t_dst **a, t_dst **b, long pivot_num)
+void	sep_pivot(char **argv, t_dst **a, t_dst **b, long pivot_num)
 {
 	t_dst	*a_ptr;
 	int		max;
