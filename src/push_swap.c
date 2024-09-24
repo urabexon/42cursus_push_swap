@@ -6,11 +6,15 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:14 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/22 22:07:02 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/24 21:56:54 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+#include <string.h>
+
+int	split_argv(char	***strs, char **argv, char *sep);
+int	is_valid(char **strs);
 
 // 配列の長さカウント用
 int	count_argv(char **argv)
@@ -45,6 +49,8 @@ int	under_5_argv(t_dst **a, t_dst **b, char **argv, t_config *conf)
 {
 	// conf->len == 2の場合、sa(a)を呼び出してaリストの先頭の2つの要素を入れ替える
 	// saでスタックaの先頭2つを交換
+	
+
 	if (conf->len == 2)
 	{
 		sa(a);
@@ -65,18 +71,64 @@ int	under_5_argv(t_dst **a, t_dst **b, char **argv, t_config *conf)
 	return (0);
 }
 
+int is_valid_digit(char *str)
+{
+	int i = 0;
+
+	// Check if negative number
+	if (str[i] == '-')
+		i++;
+	while (str[i])
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+// Split function to handle space-separated numbers in one argument
+char **split_arguments(char *arg, int *count)
+{
+	char **args = NULL;
+	char *token;
+
+	*count = 0;
+	// Split the string by spaces
+	token = strtok(arg, " ");
+	while (token != NULL)
+	{
+		args = realloc(args, sizeof(char *) * (*count + 1));
+		args[*count] = token;
+		(*count)++;
+		token = strtok(NULL, " ");
+	}
+	return args;
+}
+
 int	main(int argc, char **argv)
 {
 	t_dst		**a;
 	t_dst		**b;
 	t_config	*conf;
+	int			i;
+	char		**split_args = NULL;
 
-	if (argc <= 1)
+	i = 0;
+	if (argc < 2)
 		exit(0); // 引数が1つなら終了
-	if (argc == 2)
-		return (output_error()); // 引数が2つだけならエラー処理
-	if (is_argv_error(argv))
-		return (output_error()); // 引数のエラーチェック
+	//str = argv[2];
+	if (argc >= 2)
+	{
+		i = split_argv(&split_args, argv + 1, " ");
+		if (!is_valid(split_args))
+			exit(0);
+		//printf("Argument %d: %s\n", i, split_args[i]);
+	}
+	//if (argv[2] == )
+	//	exit(0); // 引数が2つだけならエラー処理
+	//if (is_argv_error(argv))
+	//	return (output_error()); // 引数のエラーチェック
 	// リストaとb、設定情報を格納するためにmalloc
 	a = (t_dst **)malloc(sizeof(t_dst *));
 	b = (t_dst **)malloc(sizeof(t_dst *));

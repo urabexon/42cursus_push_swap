@@ -56,3 +56,7 @@ dkms.conf
 .DS_Store
 .github/
 .vscode/tasks.json
+
+.checker
+.checker_Mac
+.checker_linux

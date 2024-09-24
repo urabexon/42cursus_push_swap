@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 16:06:21 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/22 21:56:53 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/24 21:56:55 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ int		ft_atoi(const char *str);
 long	ft_atol(char *str);
 int		ft_isdigit(int c);
 size_t	ft_strlen(const char *s);
+char	**ft_split(char const *s, char c);
 int		ft_strcmp(char *s1, char *s2);
+char	*ft_strdup(const char *s1);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 t_dst	*ft_lstnew(long value);
 int		ft_lstsize(t_dst *dst);
 t_dst	*ft_lstlast(t_dst *dst);
@@ -104,6 +108,11 @@ void	radix_sort(t_dst **a, t_dst **b, t_config *conf);
 // sep_pivot
 long	get_pivot_n(char **argv);
 void	sep_pivot(char **argv, t_dst **a, t_dst **b, long pivot_num);
+
+// kim
+int		split_argv(char ***strs, char **argv, char *sep);
+int		is_valid(char **strs);
+
 
 //main
 int		count_argv(char **argv);

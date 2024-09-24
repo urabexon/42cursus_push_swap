@@ -6,7 +6,7 @@
 /*   By: hurabe <hurabe@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 20:52:16 by hurabe            #+#    #+#             */
-/*   Updated: 2024/09/22 22:06:41 by hurabe           ###   ########.fr       */
+/*   Updated: 2024/09/24 16:49:31 by hurabe           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_dst(t_dst **a, t_dst **b, char **argv, t_config *conf)
 
 	argv_count = 0;
 	while (argv[argv_count])
-		argv++;
+		argv_count++;
 	argv_count--;
 	i = 0;
 	arr = coordinate_press(argv, argv_count);
